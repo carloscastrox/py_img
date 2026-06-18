@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visión Artificial - Detección de Rostros</title>
+    <title>Visión Artificial - Detección en Tiempo Real</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Procesamiento de Imágenes con OpenCV</h1>
-        <p>Sube una imagen para realizar la detección automática de rostros utilizando Inteligencia Artificial.</p>
+        <p>Detecta rostros subiendo una foto o directamente en vivo usando tu cámara web.</p>
     </header>
 
     <main class="container">
-        <section class="upload-section">
+        <div class="mode-selector">
+            <button id="btnModeUpload" class="btn-mode active">Subir Archivo</button>
+            <button id="btnModeCamera" class="btn-mode">Usar Cámara</button>
+        </div>
+
+        <section class="upload-section" id="sectionUpload">
             <div class="drop-zone" id="dropZone">
                 <p>Arrastra tu imagen aquí o haz clic para buscar</p>
                 <input type="file" id="fileInput" accept="image/*" aria-label="Seleccionar imagen">
             </div>
             <button id="btnProcess" disabled>Procesar Imagen</button>
+        </section>
+
+        <section class="camera-section" id="sectionCamera" hidden>
+            <div class="video-container">
+                <video id="webcam" autoplay playsinline muted width="400" height="300"></video>
+                <canvas id="canvasFrame" width="400" height="300" hidden></canvas>
+            </div>
+            <div class="camera-controls">
+                <button id="btnStartCamera">Encender Cámara</button>
+                <button id="btnStopCamera" disabled>Apagar Cámara</button>
+            </div>
         </section>
 
         <section class="result-section">
@@ -28,13 +44,13 @@
             </div>
             
             <div class="preview-container">
-                <div class="box">
-                    <h4>Original</h4>
-                    <img id="imgOriginal" src="" alt="Vista previa de la imagen original" hidden>
+                <div class="box" id="boxOriginal">
+                    <h4>Vista Previa / Origen</h4>
+                    <img id="imgOriginal" src="" alt="Vista previa" hidden>
                 </div>
                 <div class="box">
-                    <h4>Resultado</h4>
-                    <img id="imgResult" src="" alt="Imagen con rostros detectados" hidden>
+                    <h4>Resultado del Servidor</h4>
+                    <img id="imgResult" src="" alt="Detección de rostros" hidden>
                     <div id="loader" class="spinner" hidden></div>
                 </div>
             </div>

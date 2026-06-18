@@ -153,3 +153,51 @@ footer {
     background: #e2e8f0;
     margin-top: auto;
 }
+
+/* Selectores de modo */
+.mode-selector {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.btn-mode {
+    max-width: 200px;
+    margin: 0;
+    background-color: #64748b;
+}
+
+.btn-mode.active {
+    background-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4);
+}
+
+.camera-section {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background: #000;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto 1rem;
+}
+
+.camera-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.camera-controls button {
+    margin: 0;
+}
