@@ -13,3 +13,6 @@ img {
   height: auto;
   object-fit: contain;
 }
+.transition {
+  transition: all 0.3s ease;
+}

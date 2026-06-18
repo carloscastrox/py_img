@@ -21,7 +21,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -51,7 +51,7 @@
                 <div id="sectionUpload" class="card h-100 shadow-sm">
                     <div class="card-body d-flex flex-column justify-content-between p-4">
                         <div id="dropZone"
-                            class="position-relative border border-3 border-dashed rounded p-5 text-center bg-white mb-3 hover-shadow transition">
+                            class="position-relative border border-3 border-dashed rounded p-5 text-center bg-white mb-3 transition">
                             <p class="mb-0 text-muted fw-semibold">Arrastra tu imagen aquí o haz clic para buscar</p>
                             <input type="file" id="fileInput" class="drop-zone-input" accept="image/*"
                                 aria-label="Seleccionar imagen">
@@ -62,20 +62,18 @@
                     </div>
                 </div>
 
-                <div id="sectionCamera" class="card h-100 shadow-sm" hidden>
+                <div id="sectionCamera" class="card h-100 shadow-sm d-none">
                     <div class="card-body text-center p-4">
                         <div class="bg-black rounded overflow-hidden shadow-inner d-flex justify-content-center align-items-center mb-3"
                             style="min-height: 250px;">
                             <video id="webcam" autoplay playsinline muted class="w-100"></video>
-                            <canvas id="canvasFrame" width="400" height="300" hidden></canvas>
+                            <canvas id="canvasFrame" width="400" height="300" class="d-none"></canvas>
                         </div>
                         <div class="d-flex flex-wrap gap-2 justify-content-center">
                             <button id="btnStartCamera" class="btn btn-primary px-4 fw-semibold">Encender
                                 Cámara</button>
                             <button id="btnToggleCamera" class="btn btn-warning px-3 fw-semibold"
-                                style="display: none;">
-                                🔄 Cambiar Cámara
-                            </button>
+                                style="display: none;">🔄 Cambiar Cámara</button>
                             <button id="btnStopCamera" class="btn btn-danger px-4 fw-semibold" disabled>Apagar
                                 Cámara</button>
                         </div>
@@ -91,8 +89,8 @@
                     </div>
                     <div class="card-body p-4 d-flex flex-column justify-content-start">
 
-                        <div id="metricsZone" class="alert alert-success d-flex align-items-center mb-3" role="alert"
-                            hidden>
+                        <div id="metricsZone" class="alert alert-success d-flex align-items-center mb-3 d-none"
+                            role="alert">
                             <div>
                                 <h6 class="alert-heading fw-bold mb-1">Resultados del Análisis:</h6>
                                 <p class="mb-0">Rostros detectados en la escena: <span id="faceCount"
@@ -105,16 +103,19 @@
                                 <div
                                     class="p-3 bg-light rounded border border-secondary border-opacity-10 h-100 d-flex flex-column justify-content-center align-items-center">
                                     <h6 class="text-muted mb-2">Vista Previa / Origen</h6>
-                                    <img id="imgOriginal" src="" alt="Vista previa" class="rounded shadow-sm" hidden>
+                                    <img id="imgOriginal" src="" alt="Vista previa" class="rounded shadow-sm d-none">
                                 </div>
                             </div>
-                            <div class="col-sm-6 text-center">
+
+                            <div class="col-sm-6 text-center mx-auto">
                                 <div class="p-3 bg-light rounded border border-secondary border-opacity-10 h-100 d-flex flex-column justify-content-center align-items-center position-relative"
                                     style="min-height: 180px;">
                                     <h6 class="text-muted mb-2">Resultado del Servidor</h6>
-                                    <img id="imgResult" src="" alt="Detección de rostros" class="rounded shadow-sm">
 
-                                    <div id="loader" class="spinner-border text-primary my-3" role="status" hidden>
+                                    <img id="imgResult" src="" alt="Detección de rostros"
+                                        class="rounded shadow-sm d-none">
+
+                                    <div id="loader" class="spinner-border text-primary my-3 d-none" role="status">
                                         <span class="visually-hidden">Procesando...</span>
                                     </div>
                                 </div>
@@ -130,7 +131,7 @@
     <footer class="bg-dark text-secondary text-center py-4 border-top border-secondary border-opacity-20 mt-auto">
         <div class="container">
             <p class="mb-1 small">&copy; 2026 - Python y Machine Learning</p>
-            <p class="mb-0 small">By Carlos Andrés Castro Jaramillo</p>
+            <p class="mb-0 small text-muted">By Carlos Andrés Castro Jaramillo</p>
         </div>
     </footer>
 
