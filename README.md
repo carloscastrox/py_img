@@ -1,8 +1,8 @@
-# :camera: py_img: Real-time Image and Video Face Detection
+# :camera: py_img: Detección de rostros en imágenes y videos en tiempo real
 
-This project provides a web application for real-time face detection using Python, Flask, OpenCV, and Bootstrap.
+Este proyecto proporciona una aplicación web para la detección de rostros en tiempo real utilizando Python, Flask, OpenCV y Bootstrap.
 
-It allows users to upload an image or use their webcam to detect faces, displaying the results with bounding boxes and a count of detected faces.
+Permite a los usuarios subir una imagen o usar su cámara web para detectar rostros, mostrando los resultados con recuadros delimitadores y un recuento de los rostros detectados.
 
 ## :star: Badges
 
