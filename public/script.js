@@ -254,10 +254,6 @@ async function processCameraFrame() {
 // --- CENTRALIZACIÓN DEL ENVÍO AL BACKEND (CONEXIÓN CON API VERCEL) ---
 async function sendFrameToBackend(formData) {
   try {
-    // Al iniciar la petición: Mostrar loader y ocultar imagen anterior usando clases de Bootstrap
-    loader.classList.remove("d-none");
-    imgResult.classList.add("d-none");
-
     const response = await fetch("/api/detect", {
       method: "POST",
       body: formData,
@@ -268,20 +264,12 @@ async function sendFrameToBackend(formData) {
     const data = await response.json();
 
     if (data.success) {
-      // Asignar la imagen en Base64
+      // Renderizar la imagen procesada devuelta por OpenCV en Base64
       imgResult.src = data.image;
-
-      // SOLUCIÓN: Mostrar la imagen y la zona de métricas removiendo '.d-none'
-      imgResult.classList.remove("d-none");
-      metricsZone.classList.remove("d-none");
-
-      // Actualizar el contador de rostros
       faceCount.textContent = data.faces_detected;
+      metricsZone.hidden = false;
     }
   } catch (error) {
-    console.error("Error en el envío:", error);
-  } finally {
-    // Al finalizar (con éxito o error): Ocultar siempre el loader
-    loader.classList.add("d-none");
+    console.error("Error en el envío de datos analíticos:", error);
   }
 }
