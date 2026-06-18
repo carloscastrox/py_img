@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visión Artificial - Detección de Rostros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Procesamiento de Imágenes con OpenCV</h1>
+        <p>Sube una imagen para realizar la detección automática de rostros utilizando Inteligencia Artificial.</p>
+    </header>
+
+    <main class="container">
+        <section class="upload-section">
+            <div class="drop-zone" id="dropZone">
+                <p>Arrastra tu imagen aquí o haz clic para buscar</p>
+                <input type="file" id="fileInput" accept="image/*" aria-label="Seleccionar imagen">
+            </div>
+            <button id="btnProcess" disabled>Procesar Imagen</button>
+        </section>
+
+        <section class="result-section">
+            <div class="metrics" id="metricsZone" hidden>
+                <h3>Resultados del Análisis:</h3>
+                <p>Rostros detectados: <span id="faceCount">0</span></p>
+            </div>
+            
+            <div class="preview-container">
+                <div class="box">
+                    <h4>Original</h4>
+                    <img id="imgOriginal" src="" alt="Vista previa de la imagen original" hidden>
+                </div>
+                <div class="box">
+                    <h4>Resultado</h4>
+                    <img id="imgResult" src="" alt="Imagen con rostros detectados" hidden>
+                    <div id="loader" class="spinner" hidden></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Módulo de Analítica y Desarrollo de Software</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
