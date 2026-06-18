@@ -91,39 +91,38 @@
                     </div>
                     <div class="card-body p-4 d-flex flex-column justify-content-start">
 
-                        <div id="metricsZone" class="alert alert-success d-flex align-items-center mb-3" role="alert"
-                            hidden>
-                            <div>
-                                <h6 class="alert-heading fw-bold mb-1">Resultados del Análisis:</h6>
-                                <p class="mb-0">Rostros detectados en la escena: <span id="faceCount"
-                                        class="badge bg-success fs-6">0</span></p>
-                            </div>
+                        <div id="metricsZone" class="alert alert-success d-flex align-items-center mb-3 d-none"
+                            role="alert">
+                            <h6 class="alert-heading fw-bold mb-1">Resultados del Análisis:</h6>
+                            <p class="mb-0">Rostros detectados en la escena: <span id="faceCount"
+                                    class="badge bg-success fs-6">0</span></p>
                         </div>
-
-                        <div class="row g-3">
-                            <div id="boxOriginal" class="col-sm-6 text-center">
-                                <div
-                                    class="p-3 bg-light rounded border border-secondary border-opacity-10 h-100 d-flex flex-column justify-content-center align-items-center">
-                                    <h6 class="text-muted mb-2">Vista Previa / Origen</h6>
-                                    <img id="imgOriginal" src="" alt="Vista previa" class="rounded shadow-sm" hidden>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <div class="p-3 bg-light rounded border border-secondary border-opacity-10 h-100 d-flex flex-column justify-content-center align-items-center position-relative"
-                                    style="min-height: 180px;">
-                                    <h6 class="text-muted mb-2">Resultado del Servidor</h6>
-                                    <img id="imgResult" src="" alt="Detección de rostros" class="rounded shadow-sm">
-
-                                    <div id="loader" class="spinner-border text-primary my-3" role="status" hidden>
-                                        <span class="visually-hidden">Procesando...</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+
+                    <div class="row g-3">
+                        <div id="boxOriginal" class="col-sm-6 text-center">
+                            <div
+                                class="p-3 bg-light rounded border border-secondary border-opacity-10 h-100 d-flex flex-column justify-content-center align-items-center">
+                                <h6 class="text-muted mb-2">Vista Previa / Origen</h6>
+                                <img id="imgOriginal" src="" alt="Vista previa" class="rounded shadow-sm" hidden>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <div class="p-3 bg-light rounded border border-secondary border-opacity-10 h-100 d-flex flex-column justify-content-center align-items-center position-relative"
+                                style="min-height: 180px;">
+                                <h6 class="text-muted mb-2">Resultado del Servidor</h6>
+                                <img id="imgResult" src="" alt="Detección de rostros" class="rounded shadow-sm d-none">
+
+                                <div id="loader" class="spinner-border text-primary my-3 d-none" role="status">
+                                    <span class="visually-hidden">Procesando...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </div>
         </div>
     </main>
 
